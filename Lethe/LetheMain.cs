@@ -51,11 +51,23 @@ public class Main : BasePlugin
             }
         }
     }
+    
+   
+    // creates a value getter to be added to the consequence dict of modular 
+    public class MyAcquirerClass : IModularAcquirer
+    {
+        public int ExecuteAcquirer(ModularSA modular, string section, string circledSection, string[] circles)
+        {
+            // the value which this acquirer returns, by convention, -1 should be returned in case of an error
+            return 42;
+        }
+    }
 
     public override void Load()
     {
         // Adds the consequence to the consequence dict in modular
         MainClass.consequenceDict["myConsequence"] = new MyConsequenceClass();
+        MainClass.acquirerDict["myAcquirer"] = new MyAcquirerClass();
         // optional logging, feel free to remove.
         LetheHooks.LOG.LogError("THE MODULAR CONSEQUNCE HAS ARRIVED!!!");
     }
