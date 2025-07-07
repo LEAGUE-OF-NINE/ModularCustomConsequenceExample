@@ -55,4 +55,10 @@
       <Private>false</Private>
     </Reference>
   </ItemGroup>
+
+  <!-- ~~~~~ Copy to game folder on build ~~~~~ -->
+  <Target Name="CopyToGame" AfterTargets="build">
+    <Message Text="Copying ModularSkillScripts.dll to game..." Importance="high"/>
+    <Copy SourceFiles="$(OutputPath)$(AssemblyName).dll" DestinationFiles="$(LimbusCompanyFolder)\BepInEx\plugins\$(AssemblyName).dll"/>
+  </Target>
 </Project>
