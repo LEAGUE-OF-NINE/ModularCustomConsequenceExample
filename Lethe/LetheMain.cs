@@ -8,7 +8,7 @@ using ModularSkillScripts.Consequence;
 namespace ModularCustomConsequences;
 
 [BepInPlugin(GUID, NAME, VERSION)]
-[BepInDependency("GlitchGames.ModularSkillScripts")]
+[BepInDependency("GlitchGames.ModularSkillScripts")] // this is required to make your plugin run AFTER Modular has been loaded.
 public class Main : BasePlugin
 {
     // Edit the below to your own plugin name, version, etc.
