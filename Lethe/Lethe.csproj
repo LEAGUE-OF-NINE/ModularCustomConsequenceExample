@@ -1,0 +1,283 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <PlatformTarget>x64</PlatformTarget>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AllowedReferenceRelatedFileExtensions>none</AllowedReferenceRelatedFileExtensions>
+    <DebugSymbols>true</DebugSymbols>
+    <LangVersion>10.0</LangVersion>
+    <IsPublishable>True</IsPublishable>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Platforms>x64</Platforms>
+    <Configurations>BIE</Configurations>
+    <RunAnalyzersDuringBuild>False</RunAnalyzersDuringBuild>
+    <OutputPath>.\Release</OutputPath>
+    <NoWarn>1701;1702;2211;CA2211;IDE1006;IDE0060</NoWarn>
+    <DebugType>none</DebugType>
+    <RootNamespace>MyPlugin</RootNamespace>
+    <AssemblyName>MyPlugin</AssemblyName>
+    <Product>MyPlugin</Product>
+    <Version>1.0.0</Version>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <LangVersion>latest</LangVersion>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" IncludeAssets="compile" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+
+  <!-- ~~~~~ ASSEMBLY REFERENCES ~~~~~ -->
+  <!-- BepinEx -->
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="ACTk.Examples.Genuine.Runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\ACTk.Examples.Genuine.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ACTk.Examples.Runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\ACTk.Examples.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ACTk.Runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\ACTk.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AllIn1SpriteShaderAssembly">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\AllIn1SpriteShaderAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\AsmResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.DotNet">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\AsmResolver.DotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.PE">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\AsmResolver.PE.dll</HintPath>
+    </Reference>
+    <Reference Include="AsmResolver.PE.File">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\AsmResolver.PE.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetRipper.CIL">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\AssetRipper.CIL.dll</HintPath>
+    </Reference>
+    <Reference Include="AssetRipper.Primitives">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\AssetRipper.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Core">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\BepInEx.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Preloader.Core">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\BepInEx.Preloader.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.Common">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\BepInEx.Unity.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Cinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Coffee.SoftMaskForUGUI">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Coffee.SoftMaskForUGUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Cpp2IL.Core">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Cpp2IL.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Disarm">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Disarm.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\DOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Facepunch.Steamworks.Win64">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Facepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="Febucci.TextAnimator.Demo.Runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Febucci.TextAnimator.Demo.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Febucci.TextAnimator.Runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Febucci.TextAnimator.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\FMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="Gee.External.Capstone">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Gee.External.Capstone.dll</HintPath>
+    </Reference>
+    <Reference Include="Iced">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Iced.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Il2CppInterop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Generator">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Il2CppInterop.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.HarmonySupport">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Il2CppInterop.HarmonySupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMono.Security">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppMono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Configuration">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Data">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.IO.Compression">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.IO.Compression.FileSystem">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Net.Http">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Numerics">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Runtime.CompilerServices.Unsafe">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Runtime.Serialization">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Runtime.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Text.Encodings.Web">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Text.Json">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Xml">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Xml.Linq">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Il2CppSystem.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="InterfacesLibraryAssembly">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\InterfacesLibraryAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="LibCpp2IL">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\LibCpp2IL.dll</HintPath>
+    </Reference>
+    <Reference Include="LimbusCompany.AddressableConstants">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\LimbusCompany.AddressableConstants.dll</HintPath>
+    </Reference>
+    <Reference Include="LokoSolo.PinchableScrollRect">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\LokoSolo.PinchableScrollRect.dll</HintPath>
+    </Reference>
+    <Reference Include="material-timeline">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\material-timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Merged">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\plugins\Lethe.dll</HintPath>
+    </Reference>
+    <Reference Include="ModularSkillScripts">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\plugins\ModularSkillScripts.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectMoon.BaseStructures">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\ProjectMoon.BaseStructures.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectMoon.DelegateCollection">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\ProjectMoon.DelegateCollection.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectMoonUnity.Utils">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\ProjectMoonUnity.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="RubyTextMeshPro">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\RubyTextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="sc.posteffects.runtime">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\sc.posteffects.runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="SemanticVersioning">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\SemanticVersioning.dll</HintPath>
+    </Reference>
+    <Reference Include="SkillViewMarker">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\SkillViewMarker.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOUnityAssembly">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\SocketIOUnityAssembly.dll</HintPath>
+    </Reference>
+    <Reference Include="StableNameDotNet">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\StableNameDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="WasmDisassembler">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\core\WasmDisassembler.dll</HintPath>
+    </Reference>
+    <Reference Include="__Generated">
+      <HintPath>..\..\..\..\Desktop\LIMBUS\BepInEx\interop\__Generated.dll</HintPath>
+    </Reference>
+    <Reference Include="$(LimbusCompanyFolder)\BepInEx\core\*.dll">
+      <HintPath>%(Identity)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(LimbusCompanyFolder)\BepInEx\interop\*.dll">
+      <HintPath>%(Identity)</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="$(LimbusCompanyFolder)\mono\Managed\*.dll">
+      <HintPath>%(Identity)</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
