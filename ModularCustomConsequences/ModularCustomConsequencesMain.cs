@@ -1,11 +1,9 @@
-﻿using ModularSkillScripts;
+﻿using BepInEx;
 using BepInEx.Unity.IL2CPP;
-using BepInEx;
 using Lethe;
-using Lethe.Patches;
-using ModularSkillScripts.Consequence;
+using ModularSkillScripts;
 
-namespace ModularCustomConsequences;
+namespace MyPlugin;
 
 [BepInPlugin(GUID, NAME, VERSION)]
 // this is required to make your plugin run AFTER Modular has been loaded.
